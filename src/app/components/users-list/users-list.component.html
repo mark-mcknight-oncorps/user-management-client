@@ -1,0 +1,15 @@
+<div>
+  <ng-container *ngIf="!isLoading && !error">
+    <ul *ngIf="users$ | async as users">
+      <li *ngFor="let user of users">
+        {{ user.email }}
+      </li>
+    </ul>
+  </ng-container>
+
+  <div *ngIf="isLoading">Loading users...</div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+</div>
